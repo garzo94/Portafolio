@@ -1,11 +1,15 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import Navbar from "./components/Navbar";
+import Hero from "./Sections/Hero";
+
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <>
+      <Navbar />
+      <Hero />
+    </>
+  );
 }
-
 export default App;
