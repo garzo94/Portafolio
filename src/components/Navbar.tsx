@@ -7,29 +7,36 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Menu,
   Container,
-  Button,
-  Tooltip,
-  MenuItem,
+  Link,
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
 export default function Navbar() {
   const navButtonstyle = {
-    fontSize: 30,
-    letterSpacing: 1,
-    px: 1,
-
+    fontSize: 17,
+    p: 0.8,
     display: { xs: "none", md: "flex" },
-    transition: "0.2s",
-    "&:hover": {
-      bgcolor: "rgba(255,255,255,0.1)",
+    textDecoration: "none",
+    position: "relative",
+    cursor: "pointer",
+    fontFamily: "Poppins, sans-serif",
+    color: "#fff",
 
-      px: 1,
-      borderRadius: "10px",
-      cursor: "pointer",
+    "&:before": {
+      content: '""',
+      width: "0px",
+      height: "3px",
+      background: "linear-gradient(to top left, #ff3d00 0%, #0400ff 100% )",
+      position: "absolute",
+      top: "100%",
+      left: 0,
+      transition: "0.5s",
+    },
+    "&:hover:before": {
+      width: "50%",
+      transform: "translateX(100%)",
     },
   };
   const pathVariants = {
@@ -38,7 +45,7 @@ export default function Navbar() {
     },
     visible: {
       opacity: 1,
-      transition: { duration: 4, ease: "easeInOut" },
+      transition: { duration: 3, ease: "easeInOut" },
     },
   };
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -59,8 +66,8 @@ export default function Navbar() {
     <ThemeProvider theme={theme}>
       <motion.div
         initial={{ y: -200 }}
-        animate={{ y: -81 }}
-        transition={{ delay: 0.2, type: "spring", stiffness: 25 }}
+        animate={{ y: -0 }}
+        transition={{ delay: 1, type: "spring", stiffness: 25 }}
       >
         <AppBar
           position="fixed"
@@ -107,11 +114,11 @@ export default function Navbar() {
                     href="/"
                     sx={{
                       mx: 1,
-                      mt: 0.8,
                       color: "inherit",
                       textDecoration: "none",
-                      fontSize: "50px",
-                      fontWeight: "500",
+                      fontFamily: "'Dancing Script', cursive",
+                      fontSize: "28px",
+
                       letterSpacing: 2,
                     }}
                   >
@@ -136,32 +143,37 @@ export default function Navbar() {
               <Box
                 sx={{
                   display: { xs: "none", md: "flex" },
+                  alignItems: "center",
                   gap: 2,
                   mr: 5,
                 }}
               >
-                <Typography sx={navButtonstyle}>Home</Typography>
-                <Typography sx={navButtonstyle}>Projects</Typography>
-                <Typography sx={navButtonstyle}>About</Typography>
-                <Typography sx={navButtonstyle}>Resume</Typography>
-                <Typography
+                <Link sx={navButtonstyle}>Home</Link>
+                <Link sx={navButtonstyle}>Projects</Link>
+                <Link sx={navButtonstyle}>About</Link>
+                <Link sx={navButtonstyle}>Resume</Link>
+                <Link
                   sx={{
-                    fontSize: 30,
-                    color: "black",
-                    borderRadius: "10px",
-                    fontWeight: "900",
-                    px: 1,
-                    pt: 0.3,
-                    bgcolor: "white",
-                    transition: "0.2s",
+                    borderWidth: " 1px",
+                    borderStyle: "solid",
+                    borderImage:
+                      "linear-gradient(to right, #ff3d00, #0400ff) 1",
+                    boxShadow: "0px 0px 10px rgba(255,255,255,0.7)",
+                    color: "#fff",
+                    fontFamily: "Poppins, sans-serif",
+                    textDecoration: "none",
+                    p: 0.8,
+
+                    transition: "0.3s",
                     "&:hover": {
+                      p: 0.8,
                       cursor: "pointer",
-                      boxShadow: "0px 0px 15px rgba(255,255,255,0.7)",
+                      boxShadow: "0px 0px 20px rgba(255,255,255,0.5)",
                     },
                   }}
                 >
                   Hire me
-                </Typography>
+                </Link>
               </Box>
             </Toolbar>
           </Container>
