@@ -12,7 +12,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
 export default function Navbar() {
@@ -52,9 +52,6 @@ export default function Navbar() {
   };
   const pages = ["Home", "My Work", "About", "Resume", "Hire me"];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
