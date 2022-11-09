@@ -9,6 +9,8 @@ import {
   Typography,
   Container,
   Link,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -48,6 +50,7 @@ export default function Navbar() {
       transition: { duration: 3, ease: "easeInOut" },
     },
   };
+  const pages = ["Home", "My Work", "About", "Resume", "Hire me"];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -117,7 +120,12 @@ export default function Navbar() {
                       color: "inherit",
                       textDecoration: "none",
                       fontFamily: "'Dancing Script', cursive",
-                      fontSize: "28px",
+                      fontSize: {
+                        lg: "28px",
+                        md: "25px",
+                        sm: "22px",
+                        xs: "20px",
+                      },
 
                       letterSpacing: 2,
                     }}
@@ -138,6 +146,38 @@ export default function Navbar() {
                 >
                   <MenuIcon />
                 </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {pages.map((page) =>
+                    page === "Hire me" ? (
+                      <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <Typography sx={{ fontWeight: 600 }} textAlign="center">
+                          {page}
+                        </Typography>
+                      </MenuItem>
+                    ) : (
+                      <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
+                    )
+                  )}
+                </Menu>
               </Box>
 
               <Box
@@ -149,7 +189,7 @@ export default function Navbar() {
                 }}
               >
                 <Link sx={navButtonstyle}>Home</Link>
-                <Link sx={navButtonstyle}>Projects</Link>
+                <Link sx={navButtonstyle}>My Work</Link>
                 <Link sx={navButtonstyle}>About</Link>
                 <Link sx={navButtonstyle}>Resume</Link>
                 <Link

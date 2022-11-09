@@ -5,7 +5,7 @@
 #root, body {
   margin: 0;
   padding:0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .box {
   /* Required properties */
@@ -57,6 +57,7 @@
   animation:ring 2s linear infinite
 }
 
+
 @keyframes ring{
   0%{
     transform: rotate(0deg);
@@ -99,6 +100,82 @@ span{
     color:#131315;
   }
 }
+
+
+
+
+/* ##### Responsive #####*/
+/* extra small */
+@media screen and (min-width:0px){
+  canvas{
+    width:353px !important;
+    height:216px !important;
+  }
+  .box{
+    width:150px;
+    height:150px;
+  }
+  .displayLoading{
+    top: -70px
+  }
+
+}
+/* small */
+@media screen and (min-width:600px){
+  canvas{
+    width:453px !important;
+    height:316px !important;
+  }
+  .box{
+    width:175px;
+    height:175px;
+  }
+
+  .displayLoading{
+    top: -70px
+  }
+}
+/* medium */
+@media screen and (min-width:900px){
+  canvas{
+    width:533px !important;
+    height:397px !important;
+  }
+  .box{
+    width:250px;
+    height:250px;
+    margin-left: -10px;
+  }
+
+  .displayLoading{
+    top: -30px
+  }
+}
+
+/* large */
+
+@media screen and (min-width:1200px){
+  canvas{
+    width:700px !important;
+    height:564px !important;
+  }
+  .box {
+    width:310px;
+    height:310px;
+    margin-left: -10px;
+  }
+
+  .displayLoading{
+    top: 5px
+  }
+
+
+}
+
+
+
+
+
 
 
 

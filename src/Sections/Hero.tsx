@@ -10,12 +10,12 @@ import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
 import "../App.css";
 import Loading from "../components/Loading";
-// import useSpline from '@splinetool/r3f-spline'
-// import { OrthographicCamera } from '@react-three/drei'
+import VisibilityIcon from "@mui/icons-material/Visibility";
+const fontStyleHero = { lg: 60, md: 50, sm: 45, xs: 32 };
 
 const fontStyle = {
   color: "white",
-  fontSize: 60,
+  fontSize: fontStyleHero,
   fontWeight: 600,
   lineHeight: 1.3,
 };
@@ -91,47 +91,61 @@ export default function Hero() {
   const [displaySphere, setDisplaySphere] = useState(false);
   const [displayLoading, setDisplayLoading] = useState(true);
   setTimeout(() => setDisplaySpline(true), 14000);
-  setTimeout(() => setDisplaySphere(true), 10000);
-  setTimeout(() => setDisplayLoading(false), 11000);
-  console.log(displaySphere, "sphere");
+  setTimeout(() => setDisplaySphere(true), 12000);
+  setTimeout(() => setDisplayLoading(false), 13000);
+
   return (
     <ThemeProvider theme={theme}>
       <Box
         sx={{
-          pt: 20,
+          pt: { lg: 20, md: 18, sm: 10, xs: 12 },
           bgcolor: "#131315",
           height: "100vh",
           width: "100%",
           display: "flex",
+          flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
+
+          alignItems: { lg: "start", md: "start", sm: "center", xs: "center" },
         }}
       >
-        <Box sx={{ width: "50%", p: 5, display: "flex" }}>
+        <Box
+          sx={{
+            width: { lg: "45%", md: "55%", sm: "70%", xs: "90%" },
+            p: { lg: 2, md: 2, sm: 5, xs: 5 },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <motion.div
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
-            <Stack direction="column" spacing={1} sx={{ my: 2, mx: 2 }}>
+            <Stack
+              direction="column"
+              spacing={1}
+              sx={{ my: { lg: 2, md: 1.5, sm: 1.9, xs: 1 }, mx: 2 }}
+            >
               <Link
                 sx={iconsHoverStyle}
                 href="https://github.com/garzo94"
                 target="_blank"
               >
-                <GitHubIcon fontSize="large" />
+                <GitHubIcon sx={fontStyleHero} />
               </Link>
               <Link
                 sx={iconsHoverStyle}
                 href="https://www.linkedin.com/in/alexander-garzo/"
                 target="_blank"
               >
-                <LinkedInIcon fontSize="large" />
+                <LinkedInIcon sx={fontStyleHero} />
               </Link>
               <Link
                 sx={iconsHoverStyle}
                 href="https://twitter.com/alex_garzo/"
                 target="_blank"
               >
-                <TwitterIcon fontSize="large" />
+                <TwitterIcon sx={fontStyleHero} />
               </Link>
             </Stack>
           </motion.div>
@@ -144,20 +158,28 @@ export default function Hero() {
             >
               <Typography sx={fontStyle}>Building</Typography>
               <Typography sx={fontStyle}>beautiful web</Typography>
-              <Typography sx={{ fontStyle }}>experiences.</Typography>
+              <Typography sx={fontStyle}>experiences.</Typography>
               <Button
                 sx={{
                   borderWidth: " 1px",
                   borderStyle: "solid",
                   borderImage: "linear-gradient(to right, #ff3d00, #0400ff) 1",
                   mt: 2,
+                  gap: 1,
                   color: "#fff",
-                  p: 1,
+                  textTransform: "capitalize",
+                  p: { lg: 1, md: 1, sm: 0.5, xs: 0.5 },
                   "&:hover": {
                     boxShadow: "0px 0px 20px rgba(255,255,255,0.5)",
                   },
                 }}
               >
+                <VisibilityIcon
+                  sx={{
+                    color: "white",
+                    fontSize: 18,
+                  }}
+                />
                 My Work
               </Button>
             </motion.div>
@@ -165,7 +187,7 @@ export default function Hero() {
         </Box>
         <Box
           sx={{
-            width: "30%",
+            width: { lg: "50%", md: "35%", sm: "50%", xs: "100%" },
             position: "relative",
             display: "flex",
             justifyContent: "center",
@@ -182,16 +204,30 @@ export default function Hero() {
           )}
 
           {displayLoading && (
-            <motion.div
-              variants={loadingVariants}
-              initial="hidden"
-              animate="visible"
+            <Box
+              className="displayLoading"
+              sx={{
+                position: "absolute",
+                mr: { lg: -50, md: -55, sm: -62, xs: -60 },
+              }}
             >
-              <Loading />
-            </motion.div>
+              <motion.div
+                variants={loadingVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <Loading />
+              </motion.div>
+            </Box>
           )}
 
-          <Box sx={{ position: "absolute", top: -100 }}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: { lg: -100, md: -50, sm: -35, xs: -15 },
+              right: { lg: 0, md: -75 },
+            }}
+          >
             {displaySplin && (
               <motion.div
                 variants={splinVariants}
