@@ -228,7 +228,7 @@ export default function Hero() {
               right: { lg: 0, md: -75 },
             }}
           >
-            {displaySplin && (
+            {/* {displaySplin && (
               <motion.div
                 variants={splinVariants}
                 initial="hidden"
@@ -236,10 +236,9 @@ export default function Hero() {
               >
                 <Spline scene="https://prod.spline.design/pn1r3HV-s4XMZcOP/scene.splinecode" />
               </motion.div>
-            )}
+            )} */}
           </Box>
         </Box>
-
       </Box>
     </ThemeProvider>
   );
