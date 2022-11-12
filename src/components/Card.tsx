@@ -3,17 +3,24 @@ import { Stack, IconButton, Tooltip } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 const buttonsStyle = {
-  fontSize: "12px",
   color: "#181818",
   textTransform: "capitalize",
   border: "1px solid #181818",
   alignText: "center",
+  width: "30px",
+  height: "30px",
   "&:hover": {
     border: "1px solid #181818",
     bgcolor: "#fff",
   },
+};
+
+const sizeIcon = {
+  width: "0.5em",
+  height: "0.5em",
 };
 
 const tootlipStyle = {
@@ -63,7 +70,7 @@ export default function Card() {
 
           <Tooltip title="View video demo" PopperProps={propperStyle}>
             <IconButton sx={buttonsStyle} size="small">
-              <SmartDisplayIcon />
+              <PlayCircleIcon />
             </IconButton>
           </Tooltip>
 
@@ -73,6 +80,9 @@ export default function Card() {
                 color: "#fff",
                 bgcolor: "#181818",
                 border: "1px solid #181818",
+                width: "30px",
+                height: "30px",
+                transition: "0.7s",
                 "&:hover": {
                   border: "1px solid #181818",
                   bgcolor: "#fff",

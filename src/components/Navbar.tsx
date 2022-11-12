@@ -50,7 +50,7 @@ export default function Navbar() {
       transition: { duration: 3, ease: "easeInOut" },
     },
   };
-  const pages = ["Home", "My Work", "About", "Resume", "Hire me"];
+  const pages = ["Home", "My Work", "About", "Hire me"];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -188,7 +188,7 @@ export default function Navbar() {
                 <Link sx={navButtonstyle}>Home</Link>
                 <Link sx={navButtonstyle}>My Work</Link>
                 <Link sx={navButtonstyle}>About</Link>
-                <Link sx={navButtonstyle}>Resume</Link>
+
                 <Link
                   sx={{
                     borderWidth: " 1px",

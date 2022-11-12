@@ -8,14 +8,12 @@ export default function MyWork() {
       <Box
         sx={{
           bgcolor: "#262626",
-          height: "700px",
+          height: { lg: "700px", md: "700px", sm: "1000px" },
           width: "100vw",
           position: "relative",
-
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-
           jusfityContent: "center",
         }}
       >
@@ -23,9 +21,10 @@ export default function MyWork() {
           sx={{
             color: "rgba(255,255,255,0.5)",
             position: "absolute",
-            top: -145,
-            left: 75,
-            fontSize: "45px",
+            top: { lg: -65, md: -45, sm: -15, xs: -20 },
+            left: { lg: 75, md: 40, sm: 20, xs: 35 },
+            fontSize: { lg: "45px", md: "35px", sm: "32px", xs: "25px" },
+            zIndex: 1,
             fontWeight: 600,
           }}
         >
@@ -40,26 +39,73 @@ export default function MyWork() {
             borderBottom: "200px solid transparent",
           }}
         ></Box>
-        <Grid container sx={{ width: "90%" }}>
-          <Grid item lg={4}>
+        <Grid
+          container
+          sx={{ width: "100%", mt: { lg: 10, md: 10, sm: 15, xs: 10 } }}
+          spacing={0.5}
+        >
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
-          <Grid item lg={4}>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
-          <Grid item lg={4}>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
-          <Grid item lg={4}>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
-          <Grid item lg={4}>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
-          <Grid item lg={4}>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            sm={6}
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <Card />
           </Grid>
         </Grid>
+
         <Stack>
           <Pagination
             count={3}

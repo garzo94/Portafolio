@@ -61,7 +61,7 @@ const splinVariants = {
       type: "spring",
       mass: 0.4, // only with spring
       damping: 8, //only with spring
-      delay: 4,
+      delay: 0,
     },
   },
 };
@@ -90,9 +90,9 @@ export default function Hero() {
   const [displaySplin, setDisplaySpline] = useState(false);
   const [displaySphere, setDisplaySphere] = useState(false);
   const [displayLoading, setDisplayLoading] = useState(true);
-  setTimeout(() => setDisplaySpline(true), 14000);
-  setTimeout(() => setDisplaySphere(true), 12000);
-  setTimeout(() => setDisplayLoading(false), 13000);
+  setTimeout(() => setDisplaySpline(true), 5500);
+  setTimeout(() => setDisplaySphere(true), 5000);
+  setTimeout(() => setDisplayLoading(false), 4500);
 
   return (
     <ThemeProvider theme={theme}>
@@ -100,7 +100,7 @@ export default function Hero() {
         sx={{
           pt: { lg: 20, md: 18, sm: 10, xs: 12 },
           bgcolor: "#131315",
-          height: "550px",
+          height: { lg: "500px", md: "425px" },
           width: "100%",
           display: "flex",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
@@ -224,19 +224,42 @@ export default function Hero() {
           <Box
             sx={{
               position: "absolute",
-              top: { lg: -100, md: -50, sm: -35, xs: -15 },
-              right: { lg: 0, md: -75 },
+              top: { lg: 0, md: 50, sm: 0, xs: 0 },
+              right: { lg: 50, md: -40 },
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "start",
             }}
           >
-            {/* {displaySplin && (
+            {displaySplin && (
               <motion.div
                 variants={splinVariants}
                 initial="hidden"
                 animate="visible"
               >
-                <Spline scene="https://prod.spline.design/pn1r3HV-s4XMZcOP/scene.splinecode" />
+                <Box
+                  component="img"
+                  alt="web image"
+                  src="src\assets\heroImg.png"
+                  sx={{
+                    position: "relative",
+                    width: {
+                      lg: "550px",
+                      md: "400px",
+                      sm: "325px",
+                      xs: "325px",
+                    },
+                    height: {
+                      lg: "400px",
+                      md: "250px",
+                      sm: "175px",
+                      xs: "175px",
+                    },
+                    zIndex: 2,
+                  }}
+                />
               </motion.div>
-            )} */}
+            )}
           </Box>
         </Box>
       </Box>
