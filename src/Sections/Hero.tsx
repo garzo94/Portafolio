@@ -6,7 +6,6 @@ import { Button, Stack, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
 import "../App.css";
 import Loading from "../components/Loading";

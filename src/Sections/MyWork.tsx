@@ -1,8 +1,36 @@
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../Theme/theme";
+import useRequestResource from "../hooks/useRequestResource";
+import { DataInterface } from "../Types/types";
+import axios from "axios";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
 export default function MyWork() {
+  const { data, getResourceList } = useRequestResource();
+  const [cardData, setCardData] = useState<DataInterface[]>([]);
+
+  useEffect(() => {
+    getResourceList();
+  }, []);
+
+  useEffect(() => {
+    setCardData(data);
+  }, [data]);
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -39,71 +67,27 @@ export default function MyWork() {
             borderBottom: "200px solid transparent",
           }}
         ></Box>
+
         <Grid
           container
           sx={{ width: "100%", mt: { lg: 10, md: 10, sm: 15, xs: 10 } }}
           spacing={0.5}
         >
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card />
-          </Grid>
+          {cardData.map((data: DataInterface) => {
+            return (
+              <Grid
+                key={data.titleApp}
+                item
+                lg={4}
+                md={6}
+                sm={6}
+                xs={12}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                <Card data={data} />
+              </Grid>
+            );
+          })}
         </Grid>
 
         <Stack>
