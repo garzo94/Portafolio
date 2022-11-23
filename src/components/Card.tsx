@@ -76,6 +76,8 @@ export default function Card({ data }: dataCard) {
     launchLink,
   } = data;
 
+  console.log(image, "cardddd");
+
   return (
     <>
       {/* <YoutubeEmbed /> */}
@@ -91,7 +93,7 @@ export default function Card({ data }: dataCard) {
       </Modal>
       <div className="card">
         <div className="imgBx">
-          <img src={`${image}`} />
+          <img src={`http://localhost:8000${image}`} />
         </div>
         <div className="content">
           <div className="details">
@@ -124,7 +126,7 @@ export default function Card({ data }: dataCard) {
 
             <Tooltip
               onClick={handleOpen}
-              title="View video demo"
+              title="Watch video demo"
               PopperProps={propperStyle}
             >
               <IconButton sx={buttonsStyle} size="small">

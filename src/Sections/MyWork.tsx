@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Pagination,
+  Stack,
+  Typography,
+  SelectChangeEvent,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../Theme/theme";
 import useRequestResource from "../hooks/useRequestResource";
 import { DataInterface } from "../Types/types";
-import axios from "axios";
+import SelectType from "../components/SelectType";
 
 const style = {
   position: "absolute" as "absolute",
@@ -20,8 +27,13 @@ const style = {
 };
 
 export default function MyWork() {
-  const { data, getResourceList } = useRequestResource();
   const [cardData, setCardData] = useState<DataInterface[]>([]);
+  const [type, setType] = useState<string>("all");
+  const { data, getResourceList } = useRequestResource(type);
+
+  const handleChangeType = (event: SelectChangeEvent) => {
+    setType(event.target.value as string);
+  };
 
   useEffect(() => {
     getResourceList();
@@ -29,7 +41,7 @@ export default function MyWork() {
 
   useEffect(() => {
     setCardData(data);
-  }, [data]);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -58,6 +70,7 @@ export default function MyWork() {
         >
           My Work
         </Typography>
+        <SelectType />
         <Box
           sx={{
             position: "absolute",

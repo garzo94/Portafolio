@@ -8,20 +8,21 @@ const client = axios.create({
 
 
 
-export default function useRequestResource() {
+export default function useRequestResource(type:string) {
     const [data, setData] = useState<DataInterface[]>([])
     const getResourceList = useCallback(
-()=>{
-  client.get('')
-  .then((res)=>{
-    setData(res.data)
-  })
-  .catch((err)=>console.log(err,'err'))
-},[setData]
-    )
+        ()=>{
+          console.log(type,'typeee')
+          client.get(`${type}/`)
+          .then((res)=>{
+            setData(res.data)
+          })
+          .catch((err)=>console.log(err,'err'))
+        },[setData]
+            )
 
 
-  return {data, getResourceList}
+          return {data, getResourceList}
 
 
 }

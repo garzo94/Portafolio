@@ -103,7 +103,6 @@ export default function Hero() {
           width: "100%",
           display: "flex",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
-
           alignItems: { lg: "start", md: "start", sm: "center", xs: "center" },
         }}
       >
@@ -162,7 +161,7 @@ export default function Hero() {
                 sx={{
                   borderWidth: " 1px",
                   borderStyle: "solid",
-                  borderImage: "linear-gradient(to right, #ff3d00, #0400ff) 1",
+                  borderImage: "linear-gradient(to right, #7D00FF, #1976d2) 1",
                   mt: 2,
                   gap: 1,
                   color: "#fff",
