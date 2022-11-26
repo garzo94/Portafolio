@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 import "../App.css";
 import Loading from "../components/Loading";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-const fontStyleHero = { lg: 60, md: 50, sm: 45, xs: 32 };
 
+const fontStyleHero = { lg: 60, md: 50, sm: 45, xs: 32 };
 const fontStyle = {
   color: "white",
   fontSize: fontStyleHero,
@@ -89,9 +89,9 @@ export default function Hero() {
   const [displaySplin, setDisplaySpline] = useState(false);
   const [displaySphere, setDisplaySphere] = useState(false);
   const [displayLoading, setDisplayLoading] = useState(true);
-  setTimeout(() => setDisplaySpline(true), 5500);
-  setTimeout(() => setDisplaySphere(true), 5000);
-  setTimeout(() => setDisplayLoading(false), 4500);
+  setTimeout(() => setDisplaySpline(true), 1000);
+  setTimeout(() => setDisplaySphere(true), 2000);
+  // setTimeout(() => setDisplayLoading(false), 4500);
 
   return (
     <ThemeProvider theme={theme}>
@@ -162,13 +162,16 @@ export default function Hero() {
                   borderWidth: " 1px",
                   borderStyle: "solid",
                   borderImage: "linear-gradient(to right, #7D00FF, #1976d2) 1",
+                  background: "linear-gradient(to right, #7D00FF, #1976d2)",
                   mt: 2,
                   gap: 1,
                   color: "#fff",
                   textTransform: "capitalize",
                   p: { lg: 1, md: 1, sm: 0.5, xs: 0.5 },
+                  transition: "0.4s",
                   "&:hover": {
-                    boxShadow: "0px 0px 20px rgba(255,255,255,0.5)",
+                    cursor: "pointer",
+                    boxShadow: "0px 0px 30px rgba(255,255,255,0.3)",
                   },
                 }}
               >
@@ -201,7 +204,7 @@ export default function Hero() {
             ></motion.div>
           )}
 
-          {displayLoading && (
+          {/* {displayLoading && (
             <Box
               className="displayLoading"
               sx={{
@@ -217,7 +220,7 @@ export default function Hero() {
                 <Loading />
               </motion.div>
             </Box>
-          )}
+          )} */}
 
           <Box
             sx={{

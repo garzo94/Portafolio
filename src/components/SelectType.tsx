@@ -1,17 +1,22 @@
 import React from "react";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import useFilter from "../globalState/filterContext";
 
 export default function SelectType() {
-  const [age, setAge] = React.useState("Filter by");
+  const { getFilterType } = useFilter();
+
+  const [type, setType] = React.useState("Filter by");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    event.target.value !== "Filter by" && getFilterType(event.target.value);
+    setType(event.target.value);
   };
+
   return (
     <Select
       labelId="demo-simple-select-label"
       id="demo-simple-select"
-      value={age}
+      value={type}
       color="primary"
       label=""
       onChange={handleChange}
@@ -44,7 +49,6 @@ export default function SelectType() {
       </MenuItem>
       <MenuItem value="all">All</MenuItem>
       <MenuItem value="web">Web Development</MenuItem>
-      <MenuItem value="mobile">Mobile Development</MenuItem>
       <MenuItem value="ml">Machine Learning</MenuItem>
     </Select>
   );

@@ -127,7 +127,7 @@ export default function Navbar() {
                       letterSpacing: 2,
                     }}
                   >
-                    AlexanderGarzo
+                    AlexGarzo
                   </Typography>
                 </motion.div>
               </Box>

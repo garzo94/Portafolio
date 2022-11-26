@@ -10,12 +10,12 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import { DataInterface } from "../Types/types";
+import { Results } from "../Types/types";
 import { YoutubeEmbed } from "./YoutubeEmbed";
 import getYouTubeID from "get-youtube-id";
 
 interface dataCard {
-  data: DataInterface;
+  data: Results;
 }
 
 const modalStyle = {
@@ -75,8 +75,6 @@ export default function Card({ data }: dataCard) {
     youtubeLink,
     launchLink,
   } = data;
-
-  console.log(image, "cardddd");
 
   return (
     <>

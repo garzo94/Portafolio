@@ -7,13 +7,16 @@ import {
   Stack,
   Typography,
   SelectChangeEvent,
+  Grow,
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../Theme/theme";
 import useRequestResource from "../hooks/useRequestResource";
 import { DataInterface } from "../Types/types";
 import SelectType from "../components/SelectType";
-
+import useFilter from "../globalState/filterContext";
+import { Results } from "../Types/types";
+import { truncate } from "fs";
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -27,21 +30,23 @@ const style = {
 };
 
 export default function MyWork() {
-  const [cardData, setCardData] = useState<DataInterface[]>([]);
-  const [type, setType] = useState<string>("all");
-  const { data, getResourceList } = useRequestResource(type);
+  //pageApi
+  const [pageApi, setPageApi] = useState(1);
 
-  const handleChangeType = (event: SelectChangeEvent) => {
-    setType(event.target.value as string);
-  };
+  const { filterType } = useFilter();
+
+  const [cardData, setCardData] = useState<Results[]>();
+
+  const { data, getResourceList } = useRequestResource();
+  useEffect(() => {
+    pageApi !== 1
+      ? getResourceList(filterType, `?page=${pageApi}`)
+      : getResourceList(filterType, "");
+  }, [filterType, pageApi]);
 
   useEffect(() => {
-    getResourceList();
-  }, []);
-
-  useEffect(() => {
-    setCardData(data);
-  }, []);
+    setCardData(data?.results);
+  }, [data]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -59,7 +64,7 @@ export default function MyWork() {
       >
         <Typography
           sx={{
-            color: "rgba(255,255,255,0.5)",
+            color: "rgba(255,255,255,0.1)",
             position: "absolute",
             top: { lg: -65, md: -45, sm: -15, xs: -20 },
             left: { lg: 75, md: 40, sm: 20, xs: 35 },
@@ -86,28 +91,37 @@ export default function MyWork() {
           sx={{ width: "100%", mt: { lg: 10, md: 10, sm: 15, xs: 10 } }}
           spacing={0.5}
         >
-          {cardData.map((data: DataInterface) => {
+          {cardData?.map((data: Results) => {
             return (
-              <Grid
-                key={data.titleApp}
-                item
-                lg={4}
-                md={6}
-                sm={6}
-                xs={12}
-                sx={{ display: "flex", justifyContent: "center" }}
+              <Grow
+                in={true}
+                style={{ transformOrigin: "0 0 0" }}
+                {...(true ? { timeout: 2000 } : {})}
               >
-                <Card data={data} />
-              </Grid>
+                <Grid
+                  key={data.titleApp}
+                  item
+                  lg={4}
+                  md={6}
+                  sm={6}
+                  xs={12}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Card data={data} />
+                </Grid>
+              </Grow>
             );
           })}
         </Grid>
 
         <Stack>
           <Pagination
-            count={3}
+            count={
+              typeof data?.count === "number" ? Math.ceil(data?.count / 3) : 1
+            }
             size="small"
             sx={{ button: { color: "rgba(255,255,255,0.7)" } }}
+            onChange={(e, value) => setPageApi(value)}
           />
         </Stack>
       </Box>
