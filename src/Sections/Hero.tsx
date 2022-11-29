@@ -99,7 +99,7 @@ export default function Hero() {
         sx={{
           pt: { lg: 20, md: 18, sm: 10, xs: 12 },
           bgcolor: "#131315",
-          height: { lg: "500px", md: "425px" },
+          height: "500px",
           width: "100%",
           display: "flex",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },

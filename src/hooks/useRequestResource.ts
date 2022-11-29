@@ -9,7 +9,7 @@ export default function useRequestResource() {
     const [data, setData] = useState<DataInterface>()
     const getResourceList = useCallback(
         (type:string,query:string)=>{
-          console.log(query,'queryyyyy')
+       
           client.get(`${type}/${query}`)
           .then((res)=>{
             setData(res.data)

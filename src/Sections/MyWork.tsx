@@ -53,7 +53,7 @@ export default function MyWork() {
       <Box
         sx={{
           bgcolor: "#262626",
-          height: { lg: "700px", md: "700px", sm: "1000px" },
+          height: { lg: "500px", md: "800px", sm: "800px" },
           width: "100vw",
           position: "relative",
           display: "flex",
