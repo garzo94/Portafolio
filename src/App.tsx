@@ -5,6 +5,7 @@ import MyWork from "./Sections/MyWork";
 import "./App.css";
 import { Provider } from "./globalState/filterContext";
 import About from "./Sections/About";
+import Contact from "./Sections/Contact";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <MyWork />
       <About />
+      <Contact />
     </Provider>
   );
 }

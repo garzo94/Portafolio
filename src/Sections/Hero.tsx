@@ -23,7 +23,7 @@ const iconsHoverStyle = {
   color: "#fff",
   cursor: "pointer",
   display: "flex",
-  jusitfyContentL: "center",
+  justifyContentL: "center",
   transition: "0.4s",
 
   "&:hover": {

@@ -5,11 +5,12 @@ export default function About() {
   return (
     <Box
       sx={{
-        height: "350px",
+        height: { lg: "450px", md: "350px", sm: "400px", xs: "490px" },
         position: "relative",
         bgcolor: "#262626",
         display: "flex",
         alignItems: "center",
+        flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
       }}
     >
       <Box
@@ -45,41 +46,46 @@ export default function About() {
       >
         <CardMedia
           component="img"
-          image="src\assets\about.jpg"
+          image="src\assets\me.png"
           alt="Me"
           sx={{
-            width: "500px",
-            height: "300px",
+            width: { lg: "400px", md: "450px", sm: "450px", xs: "300px" },
+            height: { lg: "425px", md: "250px" },
+            m: 1,
+            mt: { lg: 0, md: 0, sm: 0, xs: 3 },
             objectFit: "cover",
-            borderRadius: "20px",
           }}
         />
       </Box>
 
       <Box
         sx={{
-          width: "50%",
+          width: { lg: "50%", md: "50%", sm: "50%", xs: "85%" },
           position: "relative",
           display: "flex",
           flexDirection: "column",
-          alignItems: "start",
+          alignItems: { lg: "start", md: "center", sm: "center", xs: "center" },
         }}
       >
-        <Typography variant="h5" sx={{ color: "#ffffff", mb: 1 }}>
+        <Typography
+          sx={{ color: "#ffffff", mb: 2, fontSize: { lg: "22px", md: "20px" } }}
+        >
           Alexander Garzo
         </Typography>
         <Typography
-          variant="h6"
           sx={{
-            width: "600px",
+            width: { lg: "550px", md: "375px", sm: "550px", xs: "320px" },
             color: "rgba(255,255,255,0.8)",
             textAlign: "justify",
+            fontSize: { lg: "18px", md: "17px", sm: "16px" },
           }}
         >
           I am industrial engineer and fullstack developer with +2 years of
-          experience in the field. I can help you with web development, web
-          design, marketing and tasks automatization. <br />
-          So, while you focus on running your business, I focus on make it grow.
+          experience. I specialize in web development and tasks automatization.
+          My passion is to build tech solutions for your business and
+          productivity. <br />
+          Let's grow together while you focus on running your business and I
+          focus on make it profitable.
         </Typography>
       </Box>
     </Box>

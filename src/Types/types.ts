@@ -16,3 +16,11 @@ export interface DataInterface
     results:Results[]
 
     }
+
+export interface EmailDataInterface
+  {
+    name: string,
+    email: string,
+    message: string,
+
+  }
