@@ -161,8 +161,8 @@ export default function Hero() {
                 sx={{
                   borderWidth: " 1px",
                   borderStyle: "solid",
-                  borderImage: "linear-gradient(to right, #7D00FF, #1976d2) 1",
-                  background: "linear-gradient(to right, #7D00FF, #1976d2)",
+                  borderImage: "linear-gradient(to right, #371F97, #1976d2) 1",
+                  background: "linear-gradient(to right, #371F97, #1976d2)",
                   mt: 2,
                   gap: 1,
                   color: "#fff",

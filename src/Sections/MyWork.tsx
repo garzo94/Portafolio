@@ -94,6 +94,7 @@ export default function MyWork() {
           {cardData?.map((data: Results) => {
             return (
               <Grow
+                key={data.titleApp}
                 in={true}
                 style={{ transformOrigin: "0 0 0" }}
                 {...(true ? { timeout: 2000 } : {})}

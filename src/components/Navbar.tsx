@@ -194,7 +194,7 @@ export default function Navbar() {
                     borderWidth: " 1px",
                     borderStyle: "solid",
                     borderImage:
-                      "linear-gradient(to right, #7d00ff, #1976d2) 1",
+                      "linear-gradient(to right, #371F97, #1976d2) 1",
                     boxShadow: "0px 0px 5px rgba(255,255,255,0.5)",
                     color: "#fff",
                     fontFamily: "Poppins, sans-serif",
