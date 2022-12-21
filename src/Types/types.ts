@@ -5,7 +5,8 @@ export interface Results {
   longDescription: string,
   shortDescription: string,
   titleApp: string,
-  youtubeLink: string
+  youtubeLink: string,
+  appType:string
 }
 
 export interface DataInterface

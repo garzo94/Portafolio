@@ -2,11 +2,11 @@ import { useCallback, useState, } from "react";
 import axios from "axios"
 import { DataInterface, EmailDataInterface } from "../Types/types";
 const client = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: "https://portafolio-backend-production-58b1.up.railway.app/api/",
   });
 
   const client2 = axios.create({
-    baseURL: "http://127.0.0.1:8000/",
+    baseURL: "https://portafolio-backend-production-58b1.up.railway.app/",
   });
 
 export default function useRequestResource() {

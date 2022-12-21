@@ -8,10 +8,10 @@ import {
   IconButton,
   Typography,
   Container,
-  Link,
   Menu,
   MenuItem,
 } from "@mui/material";
+import { Link } from "react-scroll";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ export default function Navbar() {
       content: '""',
       width: "0px",
       height: "3px",
-      background: "linear-gradient(to top left, #7d00ff 0%, #1976d2 100% )",
+      background: "linear-gradient(to top left, #371F97 0%, #371F97 100% )",
       position: "absolute",
       top: "100%",
       left: 0,
@@ -143,6 +143,7 @@ export default function Navbar() {
                 >
                   <MenuIcon />
                 </IconButton>
+                {/* Menu for responsive */}
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorElNav}
@@ -163,15 +164,34 @@ export default function Navbar() {
                 >
                   {pages.map((page) =>
                     page === "Hire me" ? (
-                      <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Typography sx={{ fontWeight: 600 }} textAlign="center">
-                          {page}
-                        </Typography>
-                      </MenuItem>
+                      <Link
+                        to={page}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            sx={{ fontWeight: 600 }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </Link>
                     ) : (
-                      <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">{page}</Typography>
-                      </MenuItem>
+                      <Link
+                        to={page}
+                        spy={true}
+                        smooth={true}
+                        offset={-95}
+                        duration={500}
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography textAlign="center">{page}</Typography>
+                        </MenuItem>
+                      </Link>
                     )
                   )}
                 </Menu>
@@ -185,31 +205,67 @@ export default function Navbar() {
                   mr: 5,
                 }}
               >
-                <Link sx={navButtonstyle}>Home</Link>
-                <Link sx={navButtonstyle}>My Work</Link>
-                <Link sx={navButtonstyle}>About</Link>
+                <Link
+                  to="Home"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <Typography sx={navButtonstyle}>Home</Typography>
+                </Link>
 
                 <Link
-                  sx={{
-                    borderWidth: " 1px",
-                    borderStyle: "solid",
-                    borderImage:
-                      "linear-gradient(to right, #371F97, #1976d2) 1",
-                    boxShadow: "0px 0px 5px rgba(255,255,255,0.5)",
-                    color: "#fff",
-                    fontFamily: "Poppins, sans-serif",
-                    textDecoration: "none",
-                    p: 0.8,
-
-                    transition: "0.3s",
-                    "&:hover": {
-                      p: 0.8,
-                      cursor: "pointer",
-                      boxShadow: "0px 0px 20px rgba(255,255,255,0.5)",
-                    },
-                  }}
+                  to="My Work"
+                  spy={true}
+                  smooth={true}
+                  offset={-250}
+                  duration={500}
                 >
-                  Hire me
+                  <Typography sx={navButtonstyle}>My Work</Typography>
+                </Link>
+
+                <Link
+                  to="About"
+                  spy={true}
+                  smooth={true}
+                  offset={-175}
+                  duration={500}
+                >
+                  <Typography sx={navButtonstyle}>About</Typography>
+                </Link>
+                <Link
+                  to="Hire me"
+                  spy={true}
+                  smooth={true}
+                  offset={20}
+                  duration={500}
+                >
+                  <Typography
+                    sx={{
+                      // borderWidth: " 1px",
+                      // borderStyle: "solid",
+                      // borderImage:
+                      //   "linear-gradient(to right, #371F97, #371F97) 1",
+                      border: "1px solid #371f97",
+                      boxShadow: "0px 0px 20px rgba(255,255,255,0.2)",
+                      color: "#fff",
+                      fontFamily: "Poppins, sans-serif",
+                      textDecoration: "none",
+                      p: 0.8,
+                      borderRadius: "5px",
+
+                      transition: "0.3s",
+                      "&:hover": {
+                        p: 0.8,
+                        cursor: "pointer",
+                        boxShadow: "0px 0px 30px rgba(55,31,151,1)",
+                        border: "1px solid #ffffff",
+                      },
+                    }}
+                  >
+                    Hire me
+                  </Typography>
                 </Link>
               </Box>
             </Toolbar>

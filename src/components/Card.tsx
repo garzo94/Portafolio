@@ -74,12 +74,11 @@ export default function Card({ data }: dataCard) {
     githubLink,
     youtubeLink,
     launchLink,
+    appType,
   } = data;
 
   return (
     <>
-      {/* <YoutubeEmbed /> */}
-
       <Modal
         open={open}
         onClose={handleClose}
@@ -91,7 +90,7 @@ export default function Card({ data }: dataCard) {
       </Modal>
       <div className="card">
         <div className="imgBx">
-          <img src={`http://localhost:8000${image}`} />
+          <img src={image} />
         </div>
         <div className="content">
           <div className="details">
@@ -132,27 +131,29 @@ export default function Card({ data }: dataCard) {
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="View website" PopperProps={propperStyle}>
-              <IconButton
-                onClick={() => window.open(`${launchLink}`, "_blank")}
-                sx={{
-                  color: "#fff",
-                  bgcolor: "#181818",
-                  border: "1px solid #181818",
-                  width: "30px",
-                  height: "30px",
-                  transition: "0.7s",
-                  "&:hover": {
+            {appType !== "ta" && (
+              <Tooltip title="View website" PopperProps={propperStyle}>
+                <IconButton
+                  onClick={() => window.open(`${launchLink}`, "_blank")}
+                  sx={{
+                    color: "#fff",
+                    bgcolor: "#181818",
                     border: "1px solid #181818",
-                    bgcolor: "#fff",
-                    color: "#181818",
-                  },
-                }}
-                size="small"
-              >
-                <RocketLaunchIcon />
-              </IconButton>
-            </Tooltip>
+                    width: "30px",
+                    height: "30px",
+                    transition: "0.7s",
+                    "&:hover": {
+                      border: "1px solid #181818",
+                      bgcolor: "#fff",
+                      color: "#181818",
+                    },
+                  }}
+                  size="small"
+                >
+                  <RocketLaunchIcon />
+                </IconButton>
+              </Tooltip>
+            )}
           </Stack>
         </div>
       </div>

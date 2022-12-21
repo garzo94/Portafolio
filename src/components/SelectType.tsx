@@ -49,6 +49,7 @@ export default function SelectType() {
       </MenuItem>
       <MenuItem value="all">All</MenuItem>
       <MenuItem value="web">Web Development</MenuItem>
+      <MenuItem value="ta">Task Automatization</MenuItem>
       <MenuItem value="ml">Machine Learning</MenuItem>
     </Select>
   );

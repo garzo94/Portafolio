@@ -6,10 +6,12 @@ import { Button, Stack, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import svgator from "../assets/svgator.svg";
 import { motion } from "framer-motion";
 import "../App.css";
 import Loading from "../components/Loading";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Link as Scroll } from "react-scroll";
 
 const fontStyleHero = { lg: 60, md: 50, sm: 45, xs: 32 };
 const fontStyle = {
@@ -96,9 +98,11 @@ export default function Hero() {
   return (
     <ThemeProvider theme={theme}>
       <Box
+        id="Home"
         sx={{
-          pt: { lg: 20, md: 18, sm: 10, xs: 12 },
-          bgcolor: "#131315",
+          pt: { lg: 20, md: 15, sm: 5, xs: 6 },
+          pb: { lg: 10, md: 0, sm: 20, xs: 5 },
+          bgcolor: "#131313",
           height: "500px",
           width: "100%",
           display: "flex",
@@ -157,32 +161,41 @@ export default function Hero() {
               <Typography sx={fontStyle}>Building</Typography>
               <Typography sx={fontStyle}>beautiful web</Typography>
               <Typography sx={fontStyle}>experiences.</Typography>
-              <Button
-                sx={{
-                  borderWidth: " 1px",
-                  borderStyle: "solid",
-                  borderImage: "linear-gradient(to right, #371F97, #1976d2) 1",
-                  background: "linear-gradient(to right, #371F97, #1976d2)",
-                  mt: 2,
-                  gap: 1,
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  p: { lg: 1, md: 1, sm: 0.5, xs: 0.5 },
-                  transition: "0.4s",
-                  "&:hover": {
-                    cursor: "pointer",
-                    boxShadow: "0px 0px 30px rgba(255,255,255,0.3)",
-                  },
-                }}
+              <Scroll
+                to="My Work"
+                spy={true}
+                smooth={true}
+                offset={-250}
+                duration={500}
               >
-                <VisibilityIcon
+                <Button
                   sx={{
-                    color: "white",
-                    fontSize: 18,
+                    borderRadius: "10px",
+                    background: "#371F97",
+                    mt: 2,
+                    gap: 1,
+                    color: "#fff",
+                    textTransform: "capitalize",
+                    p: { lg: 1, md: 1, sm: 0.5, xs: 0.5 },
+                    transition: "0.4s",
+                    width: "125px",
+                    border: "1px solid #371F97",
+                    "&:hover": {
+                      cursor: "pointer",
+                      boxShadow: "0px 0px 30px rgba(55,31,151,0.8)",
+                      border: "1px solid #fff",
+                    },
                   }}
-                />
-                My Work
-              </Button>
+                >
+                  <VisibilityIcon
+                    sx={{
+                      color: "white",
+                      fontSize: 18,
+                    }}
+                  />
+                  My Work
+                </Button>
+              </Scroll>
             </motion.div>
           </Box>
         </Box>
@@ -195,14 +208,14 @@ export default function Hero() {
             alignItems: "start",
           }}
         >
-          {displaySphere && (
+          {/* {displaySphere && (
             <motion.div
               className="box"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 3, delay: 1 }}
             ></motion.div>
-          )}
+          )} */}
 
           {/* {displayLoading && (
             <Box
@@ -241,20 +254,22 @@ export default function Hero() {
                 <Box
                   component="img"
                   alt="web image"
-                  src="src\assets\heroImg.png"
+                  src={svgator}
                   sx={{
-                    position: "relative",
+                    position: "absolute",
+                    right: { lg: -200, md: -180, sm: -250, xs: -165 },
+                    top: { lg: -50, md: -50 },
                     width: {
-                      lg: "550px",
-                      md: "400px",
-                      sm: "325px",
+                      lg: "800px",
+                      md: "550px",
+                      sm: "475px",
                       xs: "325px",
                     },
                     height: {
-                      lg: "400px",
-                      md: "250px",
-                      sm: "175px",
-                      xs: "175px",
+                      lg: "500px",
+                      md: "300px",
+                      sm: "250px",
+                      xs: "225px",
                     },
                     zIndex: 2,
                   }}
