@@ -182,9 +182,8 @@ export default function Contact() {
               inputProps={{
                 style: {
                   backgroundColor: "#262626",
-                  margin: 0,
-                  padding: 0,
                   color: "#fff",
+                  borderRadius: "10px",
                 },
               }}
               InputLabelProps={{
@@ -194,7 +193,6 @@ export default function Contact() {
                 borderRadius: "10px",
                 border: "none",
                 width: { lg: "80%", md: "82%", sm: "100%" },
-                backgroundColor: "#262626",
               }}
               value={formik.values.message}
               onChange={formik.handleChange}

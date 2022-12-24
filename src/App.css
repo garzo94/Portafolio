@@ -247,12 +247,21 @@ body {
   background-color: rgba(255,255,255,0.1)!important;
 }
 
+.css-1636szt,
+.css-1636szt {
+  color:rgba(255,255,255,0.5)!important
+}
+
 .css-1fxidf9-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1gyvls5-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1bym9d6-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline{
   border-color: #371F97 !important;
 }
 
 .css-igs3ac, .css-1h2fbek.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1naj8am.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1naj8am.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1azwe2k.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #371F97 !important;
+}
+
+.css-1fxidf9-MuiInputBase-root-MuiOutlinedInput-root, .css-1azwe2k{
+  padding:0 !important;
 }
 
 /* ##### Responsive #####*/
