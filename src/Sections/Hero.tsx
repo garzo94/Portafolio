@@ -104,7 +104,7 @@ export default function Hero() {
           pb: { lg: 10, md: 0, sm: 20, xs: 5 },
           bgcolor: "#131313",
           height: "500px",
-          width: "100%",
+          width: "100vw",
           display: "flex",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
           alignItems: { lg: "start", md: "start", sm: "center", xs: "center" },

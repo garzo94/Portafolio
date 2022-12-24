@@ -48,6 +48,7 @@ export default function About() {
           bgcolor: "#262626",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
           pt: { lg: 0, md: 5, sm: 0 },
           pb: { lg: 5, md: 15, sm: 5, xs: 6 },
@@ -105,7 +106,7 @@ export default function About() {
         <motion.div variants={aboutVariants}>
           <Box
             sx={{
-              width: { lg: "50%", md: "50%", sm: "50%", xs: "85%" },
+              width: { lg: "50%", md: "100%", sm: "100%", xs: "100%" },
               position: "relative",
               display: "flex",
               flexDirection: "column",

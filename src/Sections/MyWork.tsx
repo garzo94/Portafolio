@@ -65,7 +65,7 @@ export default function MyWork() {
           id="My Work"
           sx={{
             bgcolor: "#262626",
-            height: { lg: "500px", md: "800px", sm: "800px" },
+            height: { lg: "500px", md: "100%", sm: "800px" },
             width: "100vw",
             position: "relative",
             display: "flex",
@@ -100,7 +100,7 @@ export default function MyWork() {
               position: "absolute",
               top: 0,
               left: 0,
-              borderLeft: "1600px solid #131313",
+              borderLeft: "100vw solid #131313",
               borderBottom: "200px solid transparent",
             }}
           ></Box>

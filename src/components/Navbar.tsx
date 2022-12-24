@@ -116,18 +116,18 @@ export default function Navbar() {
                       mx: 1,
                       color: "inherit",
                       textDecoration: "none",
-                      fontFamily: "'Dancing Script', cursive",
+                      fontFamily: "'Poppins', cursive",
                       fontSize: {
-                        lg: "28px",
-                        md: "25px",
-                        sm: "22px",
-                        xs: "20px",
+                        lg: "20px",
+                        md: "18px",
+                        sm: "17px",
+                        xs: "16px",
                       },
 
-                      letterSpacing: 2,
+                      letterSpacing: 0,
                     }}
                   >
-                    AlexGarzo
+                    Alexander Garzo
                   </Typography>
                 </motion.div>
               </Box>
