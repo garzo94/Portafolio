@@ -116,12 +116,12 @@ export default function Navbar() {
                       mx: 1,
                       color: "inherit",
                       textDecoration: "none",
-                      fontFamily: "'Poppins', cursive",
+                      fontFamily: "'Josefin Slab', serif",
                       fontSize: {
-                        lg: "20px",
-                        md: "18px",
-                        sm: "17px",
-                        xs: "16px",
+                        lg: "30px",
+                        md: "28px",
+                        sm: "25px",
+                        xs: "22px",
                       },
 
                       letterSpacing: 0,

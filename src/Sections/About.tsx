@@ -51,7 +51,7 @@ export default function About() {
           justifyContent: "center",
           flexDirection: { lg: "row", md: "row", sm: "column", xs: "column" },
           pt: { lg: 0, md: 5, sm: 0 },
-          pb: { lg: 5, md: 15, sm: 5, xs: 6 },
+          pb: { lg: 5, md: 15, sm: 12, xs: 12 },
         }}
       >
         <Box

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,100&display=swap');
 /* *{
   overflow:''
 } */
@@ -248,6 +248,10 @@ body {
 }
 
 .css-1fxidf9-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1gyvls5-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1bym9d6-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+  border-color: #371F97 !important;
+}
+
+.css-igs3ac, .css-1h2fbek.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1naj8am.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1naj8am.Mui-focused .MuiOutlinedInput-notchedOutline, .css-1azwe2k.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #371F97 !important;
 }
 
