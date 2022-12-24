@@ -75,7 +75,7 @@ export default function About() {
               fontWeight: 600,
             }}
           >
-            About
+            Aboutttttt
           </Typography>
         </motion.div>
 
@@ -91,7 +91,7 @@ export default function About() {
           <motion.div variants={imageVariants}>
             <CardMedia
               component="img"
-              image="src\assets\me.png"
+              image="/src/assets/me.png"
               alt="Me"
               sx={{
                 width: { lg: "425px", md: "380px", sm: "325px", xs: "300px" },
