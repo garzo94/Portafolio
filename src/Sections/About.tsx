@@ -135,8 +135,8 @@ export default function About() {
                 fontSize: { lg: "18px", md: "17px", sm: "16px" },
               }}
             >
-              Hi, I am Alex, industrial engineer and fullstack developer with +2
-              years of experience. I specialize in web development and tasks
+              Hi, I am industrial engineer and fullstack developer with +2 years
+              of experience. I specialize in web development and tasks
               automatization. My tech stack is Typescript and React.js for
               frontend, Python and Django for backend. <br />
               <br />
