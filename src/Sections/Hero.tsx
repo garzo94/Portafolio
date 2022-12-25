@@ -101,7 +101,7 @@ export default function Hero() {
         id="Home"
         sx={{
           pt: { lg: 20, md: 15, sm: 5, xs: 6 },
-          pb: { lg: 10, md: 0, sm: 20, xs: 5 },
+          pb: { lg: 10, md: 0, sm: 20, xs: 10 },
           bgcolor: "#131313",
           height: "500px",
           width: "100vw",

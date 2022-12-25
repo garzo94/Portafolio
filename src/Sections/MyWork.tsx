@@ -81,11 +81,11 @@ export default function MyWork() {
               sx={{
                 color: "rgba(255,255,255,0.1)",
                 position: "absolute",
-                top: { lg: -65, md: -45, sm: -15, xs: -20 },
+                top: { lg: -65, md: -45, sm: -15, xs: -35 },
                 left: { lg: 75, md: 40, sm: 20, xs: 35 },
                 fontSize: { lg: "45px", md: "35px", sm: "32px", xs: "25px" },
-                zIndex: 1,
                 fontWeight: 600,
+                zIndex: 500,
               }}
             >
               My Work

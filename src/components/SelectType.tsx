@@ -23,7 +23,7 @@ export default function SelectType() {
       size="small"
       sx={{
         position: "absolute",
-        top: { lg: -45, md: -45, sm: -10, xs: -20 },
+        top: { lg: -45, md: -45, sm: -10, xs: -35 },
         right: { lg: 50, md: 50, sm: 25, xs: 25 },
         zIndex: 1,
         color: "rgba(255,255,255,0.5)",
