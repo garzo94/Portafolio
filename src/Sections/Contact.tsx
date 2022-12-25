@@ -184,6 +184,7 @@ export default function Contact() {
                   backgroundColor: "#262626",
                   color: "#fff",
                   borderRadius: "10px",
+                  padding: 15,
                 },
               }}
               InputLabelProps={{
