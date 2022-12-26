@@ -138,7 +138,7 @@ export default function About() {
               Hi, I am industrial engineer and fullstack developer with +2 years
               of experience. I specialize in web development and tasks
               automatization. My tech stack is Typescript and React.js for
-              frontend, Python and Django for backend. <br />
+              frontend and Python and Django for backend. <br />
               <br />
               Let's work together and let's build amazing and profitable
               applications.
