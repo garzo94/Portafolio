@@ -358,7 +358,11 @@ border-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .css-igs3ac{
-  border-color: none !important
+  border-color: rgb(38,38,38) !important
+}
+
+.css-1bwydji.Mui-focused .MuiOutlinedInput-notchedOutline{
+  border-color: #371F97;
 }
 
 
