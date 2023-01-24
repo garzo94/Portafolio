@@ -50,7 +50,8 @@ export default function Navbar() {
       transition: { duration: 3, ease: "easeInOut" },
     },
   };
-  const pages = ["Home", "My Work", "About", "Hire me"];
+//   const pages = ["Home", "My Work", "About", "Hire me"];
+  const pages = ["Home", "My Work", "About"];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
