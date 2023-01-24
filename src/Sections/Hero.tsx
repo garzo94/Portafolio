@@ -118,7 +118,7 @@ export default function Hero() {
             justifyContent: "center",
           }}
         >
-          <motion.div
+          {/* <motion.div
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -150,7 +150,7 @@ export default function Hero() {
                 <TwitterIcon sx={fontStyleHero} />
               </Link>
             </Stack>
-          </motion.div>
+          </motion.div> */}
 
           <Box>
             <motion.div
