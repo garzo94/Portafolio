@@ -135,13 +135,11 @@ export default function About() {
                 fontSize: { lg: "18px", md: "17px", sm: "16px" },
               }}
             >
-              Hi, I am industrial engineer and fullstack developer with +2 years
-              of experience. I specialize in web development and tasks
-              automatization. My tech stack is Typescript/React.js for frontend
-              and Python/Django for backend. <br />
-              <br />
-              Let's work together and let's build amazing and profitable
-              applications.
+              As a full-stack developer with over 2 years of experience, I specialize in web development and automation. 
+              Utilizing my expertise in TypeScript and React.js for frontend development and Python and Django for backend development, 
+              I am committed to creating visually appealing, user-friendly and profitable applications. 
+              
+              Let's work together to bring your ideas to life
             </Typography>
           </Box>
         </motion.div>
