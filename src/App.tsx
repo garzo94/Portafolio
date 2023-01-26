@@ -23,8 +23,7 @@ function App() {
         <Hero />
         <MyWork />
         <About />
-        {/* <Contact /> */}
-        {/* <ChatSystem /> */}
+        <Contact /> 
       </Provider>
     </ThemeProvider>
   );
