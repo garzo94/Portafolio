@@ -162,7 +162,7 @@ export default function Hero() {
             >
               {/* <Typography sx={fontStyle}>{t("header")}</Typography> */}
               <Typography sx={fontStyle}>{t("header.first")}</Typography>
-              <Typography sx={fontStyle}>{t("header.second")}</Typography>
+              <Typography sx={fontStyle}>beautiful web</Typography>
               <Typography sx={fontStyle}>{t("header.third")}</Typography>
               <Scroll
                 to="My Work"
