@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Home",
+    "Work": "My Work",
+    "About": "About me",
+    "Hire": "Hire me"
+  },
+  "header": {
+    "first": "building",
+    "second": "web beautiful",
+    "third": "experiences",
+    "button": "My Work"
+  }
+}

@@ -6,11 +6,12 @@ import { Button, Stack, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import svgator from "../assets/svgator.svg";
+import svgator from "../assets/developer.gif";
 import { motion } from "framer-motion";
 import "../App.css";
 import Loading from "../components/Loading";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useTranslation } from "react-i18next";
 import { Link as Scroll } from "react-scroll";
 
 const fontStyleHero = { lg: 60, md: 50, sm: 45, xs: 32 };
@@ -88,6 +89,7 @@ const loadingVariants = {
 };
 
 export default function Hero() {
+  const [t, i18n] = useTranslation("global");
   const [displaySplin, setDisplaySpline] = useState(false);
   const [displaySphere, setDisplaySphere] = useState(false);
   const [displayLoading, setDisplayLoading] = useState(true);
@@ -118,7 +120,7 @@ export default function Hero() {
             justifyContent: "center",
           }}
         >
-           <motion.div
+          <motion.div
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -158,9 +160,10 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
             >
-              <Typography sx={fontStyle}>Building</Typography>
-              <Typography sx={fontStyle}>beautiful web</Typography>
-              <Typography sx={fontStyle}>experiences.</Typography>
+              {/* <Typography sx={fontStyle}>{t("header")}</Typography> */}
+              <Typography sx={fontStyle}>{t("header.first")}</Typography>
+              <Typography sx={fontStyle}>{t("header.second")}</Typography>
+              <Typography sx={fontStyle}>{t("header.third")}</Typography>
               <Scroll
                 to="My Work"
                 spy={true}
@@ -208,33 +211,6 @@ export default function Hero() {
             alignItems: "start",
           }}
         >
-          {/* {displaySphere && (
-            <motion.div
-              className="box"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 3, delay: 1 }}
-            ></motion.div>
-          )} */}
-
-          {/* {displayLoading && (
-            <Box
-              className="displayLoading"
-              sx={{
-                position: "absolute",
-                mr: { lg: -50, md: -55, sm: -62, xs: -60 },
-              }}
-            >
-              <motion.div
-                variants={loadingVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <Loading />
-              </motion.div>
-            </Box>
-          )} */}
-
           <Box
             sx={{
               position: "absolute",
@@ -257,18 +233,18 @@ export default function Hero() {
                   src={svgator}
                   sx={{
                     position: "absolute",
-                    right: { lg: -200, md: -180, sm: -250, xs: -165 },
-                    top: { lg: -50, md: -50 },
+                    right: { lg: 0, md: 0, sm: -170, xs: -125 },
+                    top: { lg: -50, md: -70 },
                     width: {
-                      lg: "800px",
-                      md: "550px",
-                      sm: "475px",
-                      xs: "325px",
+                      lg: "500px",
+                      md: "400px",
+                      sm: "325px",
+                      xs: "225px",
                     },
                     height: {
                       lg: "500px",
-                      md: "300px",
-                      sm: "250px",
+                      md: "400px",
+                      sm: "325px",
                       xs: "225px",
                     },
                     zIndex: 2,

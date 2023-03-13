@@ -106,12 +106,18 @@ export default function About() {
         <motion.div variants={aboutVariants}>
           <Box
             sx={{
-              width: { lg: "50%", md: "100%", sm: "100%", xs: "100%" },
+              width: "95%",
+
+              p: 2,
+              borderRadius: 10,
               position: "relative",
               display: "flex",
               flexDirection: "column",
+              justifyContent: "center",
+
+              backgroundColor: "rgba(0,0,0,0.6)",
               alignItems: {
-                lg: "start",
+                lg: "center",
                 md: "center",
                 sm: "center",
                 xs: "center",
@@ -133,13 +139,17 @@ export default function About() {
                 color: "rgba(255,255,255,0.65)",
                 textAlign: "justify",
                 fontSize: { lg: "18px", md: "17px", sm: "16px" },
+                fontStyle: "italic",
+                lineHeight: 2,
               }}
             >
-              As a full-stack developer with over 2 years of experience, I specialize in web development and automation. 
-              Utilizing my expertise in TypeScript and React.js for frontend development and Python and Django for backend development, 
-              I am committed to creating visually appealing, user-friendly and profitable applications. 
-              
-              Let's work together to bring your ideas to life
+              As a full-stack developer with over 2 years of experience, I
+              specialize in web development and automation. Utilizing my
+              expertise in TypeScript and React.js for frontend development and
+              Python and Django for backend development, I am committed to
+              create visually appealing, user-friendly, solve solutions and
+              profitable applications. Let's work together to bring your ideas
+              to life.
             </Typography>
           </Box>
         </motion.div>

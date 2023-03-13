@@ -7,13 +7,14 @@ import { Provider } from "./globalState/filterContext";
 import About from "./Sections/About";
 import Contact from "./Sections/Contact";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import TechStack from "./Sections/TechStack";
+import Footer from "./Sections/Footer";
 // import ChatSystem from "./Sections/ChatSystem";
 const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
 });
-
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
         <Hero />
         <MyWork />
         <About />
-        <Contact /> 
+        <TechStack />
+        <Contact />
+        <Footer />
       </Provider>
     </ThemeProvider>
   );

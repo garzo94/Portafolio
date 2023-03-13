@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "Work": "Mi trabajo",
+    "About": "Sobre mí",
+    "Hire": "Contratar"
+  },
+  "header": {
+    "first": "Construyendo",
+    "second": "hermosas",
+    "third": "experiencias",
+    "button": "Mi trabajo"
+  }
+}

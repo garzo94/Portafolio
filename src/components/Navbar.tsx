@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../Theme/theme";
 import {
@@ -10,11 +10,14 @@ import {
   Container,
   Menu,
   MenuItem,
+  ToggleButton,
+  ToggleButtonGroup,
 } from "@mui/material";
 import { Link } from "react-scroll";
-
+import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
+
 export default function Navbar() {
   const navButtonstyle = {
     fontSize: 17,
@@ -50,11 +53,20 @@ export default function Navbar() {
       transition: { duration: 3, ease: "easeInOut" },
     },
   };
-//   const pages = ["Home", "My Work", "About", "Hire me"];
-  const pages = ["Home", "My Work", "About"];
+  //   const pages = ["Home", "My Work", "About", "Hire me"];
+  const pages = ["Home", "My Work", "About", "Hire me"];
+  const [alignment, setAlignment] = useState("en");
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    setAlignment(newAlignment);
+  };
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
