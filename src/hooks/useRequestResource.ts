@@ -2,7 +2,7 @@ import { useCallback, useState, } from "react";
 import axios from "axios"
 import { DataInterface, EmailDataInterface } from "../Types/types";
 const client = axios.create({
-    baseURL: "https://portafolio-backend-production-58b1.up.railway.app/api/",
+    baseURL: "http://34.195.92.185/api/",
   });
 
   const client2 = axios.create({
